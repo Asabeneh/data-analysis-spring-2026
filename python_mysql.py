@@ -21,7 +21,9 @@ with open('./cats.json') as f:
         value = (item['id'], item['name'], item['origin'], item['life_span_average'], item['weight_average'], item['description'], item['image_url'])
         values.append(value)
 cursor.executemany(sql, values)
-db.commit() 
+db.commit()
+
+print(f'===== {len(values)} cats have been inserted in to cats table ====')
 
 
 
@@ -36,5 +38,3 @@ Scraped from websites
 
 
 '''
-
-
